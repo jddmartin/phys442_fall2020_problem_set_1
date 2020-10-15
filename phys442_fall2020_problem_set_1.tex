@@ -1,64 +1,66 @@
-\documentclass[
-  % all of the below options are optional and can be left out
-  % course name (default: 2IL50 Data Structures)
-  course = {{Electricity and Magnetism 3}},
-  % quartile (default: 3)
-  term = {{4a Fall 2020}},
-  % assignment number/name (default: 1)
-  assignment = 1,
-  % student name (default: Some One)
-  name = {{Andrew Kovachik}},
-  % student number, NOT S-number (default: 0123456)
-  studentnumber = {{20673849}},
-  % student email (default: s.one@student.tue.nl)
-  email = {{kovachik.andrew@gmail.com ; ajkovach@uwaterloo.ca}},
-  % first exercise number (default: 1)
-  firstexercise = 1
-]{aga-homework}
-
+%-*- mode: latex ; mode: visual-line; mode: flyspell ; -*-
+\documentclass[12pt,geometry,width=8in]{article}
+\input{preamble}
 \usepackage{physics}
 \usepackage{graphicx}
+\usepackage{enumitem}
 \graphicspath{{./figures/}}
 
 \begin{document}
+\chead{}
+\cfoot{\thepage \space of \pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
 
+\begin{center}
+  {\large
+    Electricity and Magnetism 3 --- Phys 442  \\
+    University of Waterloo, Fall 2020
+    --- Problem Set 1
+    \par
+  }
+\end{center}
 
-\exercise
+\vspace{0.1in}
 
-\subexercise
+Due Tuesday October 20th, by 17:00EDT.  Submit through Crowdmark.
 
-A parallel plate capacitor is formed of two flat rectangular perfectly conducting sheets of
-dimensions $a$ and $b$ separated by a distance $d$, which is small compared to $a$ or $b$. Current
-is fed in and taken out uniformly along adjacent edges of length $b$. With time-harmonic input
-current and voltage defined at this end of the capacitor:
+\vspace{0.1in}
 
-\ssubexercise
+\noindent
+Thank you to Niloofar Abbasvandi for setting the original problem set and Andrew Kovachik for converting to latex.
 
-Calculate the input impedance or admittance.
+\begin{enumerate}[(1),topsep=0pt,itemsep=0ex,partopsep=1ex,parsep=1ex]
+\item
+\begin{enumerate}[(a)]
+\item A parallel plate capacitor is formed of two flat rectangular perfectly conducting sheets of dimensions $a$ and $b$ separated by a distance $d$, which is small compared to $a$ or $b$. Current is fed in and taken out uniformly along adjacent edges of length $b$.  Take current flow to be parallel to the $x$ axis. With time-harmonic input current and voltage defined at this end of the capacitor:
 
-
-\ssubexercise
-
-Calculate the electric and magnetic fields in the capacitor correct to second order in powers of the
-frequency $\omega$, but neglecting fringing fields.
+\begin{enumerate}[(i)]
+\item Calculate the input impedance or admittance.
+\item Calculate the electric and magnetic fields in the capacitor correct to second order in powers of the frequency $\omega$, but neglecting fringing fields.
 
 Hint:
 
-$$
+\[
 E = E_0 + \omega E_1+ \omega^2 E_2 + \dots
-$$
-$$
+\]
+
+\[
 B = B_0 + \omega B_1+ \omega^2 B_2 + \dots
-$$
-$$
-\vb{E}(y) = E(y)e^{-iwt}\vu{k}
-$$
-$$
-\vb{B}(y) = B(y)e^{-iwt}\vu{y}
-$$
+\]
+
+\[
+\vb{E}(x) = E(x) e^{-i \omega t}\vu{z}
+\]
+
+\[
+\vb{B}(x) = B(x) e^{-i \omega t}\vu{y}
+\]
+\end{enumerate}
+
+Clarification: please note that $\vb{E}$ and $\vb{B}$ depend on the $x$ coordinate (correction from original statement of problem), and that the current flow is parallel to the $x$ axis.
 
 \newpage
-\subexercise
+\item
 
 \begin{figure}[h]
     \centering
@@ -67,20 +69,17 @@ $$
     \label{disk}
 \end{figure}
 
-A uniformly charged thin disk of charge density $\sigma$, radius $R$, and thickness $t<R$ rotates
-with an angular velocity $w$ about the $z$ axis of symmetry, as shown in figure \ref{disk}. 
+A uniformly charged thin disk of surface charge density $\sigma$, radius $R$, and thickness $t \ll R$ rotates with an angular velocity $w$ about the $z$ axis of symmetry, as shown in figure \ref{disk}.
 
-\ssubexercise
+\begin{enumerate}[(i)]
+\item Find the magnetic field at the point located on the $z$ axis of symmetry.
+\item Obtain the solution for a sphere of volume charge density $\rho_0$ and the same radius.
+\end{enumerate}
 
-Find the magnetic field at the point located on the $z$ axis of symmetry.
-
-\ssubexercise
-
-Obtain the solution for a sphere of volume charge density $\rho_0$ and the same radius.
-
+Clarification: the disk does not have a hole in the center.
 
 \newpage
-\subexercise
+\item
 
 \begin{figure}[h]
     \centering
@@ -89,98 +88,79 @@ Obtain the solution for a sphere of volume charge density $\rho_0$ and the same 
     \label{cone}
 \end{figure}
 
-A hollow cone (like a party hat!) has a vertex angle, $2\theta_0$. The radius on the base is $R$ and
-the height is $H$. It has a surface charge density, $\rho$. It spins around its symmetric axis with
-angular frequency $\omega$. What is the magnetic field at the top vertex (point P) and the point $Z$
-at the distance $z$ from the bottom?
-
+A hollow cone (like a party hat!) has a vertex angle, $2\theta_0$. The radius on the base is $R$ and the height is $H$. It has a surface charge density, $\rho$. It spins around its symmetric axis with angular frequency $\omega$. What is the magnetic field at the top vertex (point P) and the point $Z$ at the distance $z$ from the bottom?
+\end{enumerate}
 
 \newpage
-\exercise
 
-\subexercise
-
+\item
+\begin{enumerate}[(a)]
+\item
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{solenoid}
     \caption{Diagram for question 2a}
     \label{solenoid}
 \end{figure}
-The magnetic field due to a ring of current of radius $a$, distance $z$ away on the axis of the ring
-is given by $\frac{\mu_0I}{2a} sin^3(\theta)$, $tan\theta = a/z$.  You may use this result in your
-calculations. Consider a short, (not ideal) solenoid as shown in the figure \ref{solenoid}, of length $L$, numbmer
-of turns per unit length $n$, radius $a$, and current $I$ flowing through its turns.
+The magnetic field due to a ring of current of radius $a$, distance $z$ away on the axis of the ring is given by
+\[
+\frac{\mu_0I}{2a} \sin^3(\theta),
+\]
+where $\tan\theta = a/z$.  You may use this result in your calculations. Consider a short, (not ideal) solenoid as shown in the figure \ref{solenoid}, of length $L$, number of turns per unit length $n$, radius $a$, and current $I$ flowing through its turns.
 
-\ssubexercise
-
-Find the magnetic field due to the short solenoid, on the axis of the solenoid, on the axis of the
-solenoid at the point $P$ at a distance $z$ away from the center of the solenoid. $P$ is outside the
-solenoid. Give the answer in terms of the angles $\alpha$ and $\beta$, where $\alpha$ and $\beta$
-are defined in the figure.
-
-\ssubexercise
-
-Find the magnetic field at the center of the short solenoid when the diameter of the solenoid is
-equal to its length.
-
-\ssubexercise
-
-Find the limit of the field at the center of the solenoid when the length of the solenoid is much
-larger than the diameter. Is this what you expect? Explain.
-
-\ssubexercise
-
+\begin{enumerate}[(i)]
+\item Find the magnetic field due to the short solenoid, on the axis of the solenoid, on the axis of the solenoid at the point $P$ at a distance $z$ away from the center of the solenoid. $P$ is outside the solenoid. Give the answer in terms of the angles $\alpha$ and $\beta$, where $\alpha$ and $\beta$ are defined in the figure.
+\item
+Find the magnetic field at the center of the short solenoid when the diameter of the solenoid is equal to its length.
+\item
+Find the limit of the field at the center of the solenoid when the length of the solenoid is much larger than the diameter. Is this what you expect? Explain.
+\item
 Does Ampere's law hold for the case of the short solenoid? Explain and elaborate.
-
+\end{enumerate}
 \newpage
-\subexercise
 
+\item
+\begin{enumerate}[(i)]
+\item
+Show that the energy of the magnetic field of a stationary current distribution $\vec{j}(\vec{x})$ in vacuum is determined by:
 
-\ssubexercise
-
-Show that the energy of the magnetic field of a stationary current distribution $\vec{j}(\vec{x})$
-in vaccum is determined by:
-
-$$
-W = \frac{1}{2c^2} \int d^3\vec{x} \int d^3\vec{x}' \frac{\vec{j}(\vec{x})\dot
+\[
+W = \frac{\mu_0}{8\pi} \int d^3\vec{x} \int d^3\vec{x}' \: \frac{\vec{j}(\vec{x}) \cdot
 \vec{j}(\vec{x}')}{\abs{\vec{x}-\vec{x}'}}
-$$
+\]
 
-
-\ssubexercise
-
+\item
 The energy of a system of $n$ current carrying conductors (current $I_i$) can be described by the
-quadratic form 
+quadratic form
 
-$$
+\[
 W = \frac{1}{2} \sum\limits_{i=1}^n L_i I_i^2 + \sum\limits_{i=1}^n\sum\limits_{j>i}^n L_{ij} I_i
 I_j
-$$
+\]
 
 
 Find the expression for the self-induction coefficients $L_i$ and the mutual induction coefficients,
 $L_{ij}$.
 
-\ssubexercise
-
+\item
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.25\textwidth]{cyl}
-    \caption{Diamgram for 2b}
+    \caption{Diagram for 2b}
     \label{cyl}
 \end{figure}
 
-Calculate the self-induction coefficient in (b) for a long current-carrying coaxial line (as in
-figure \ref{cyl}). Let the inner conductor (radius $a$) have the permeability, $\mu_0$. The space
-between the conductors should be filled with a material of permeability, $\mu$.
+Calculate the self-induction coefficient in (b) for a long current-carrying coaxial line (as in figure \ref{cyl}). Let the inner conductor (radius $a$) have the permeability, $\mu_0$. The space between the conductors should be filled with a material of permeability, $\mu$.
+\end{enumerate}
 
-\newpage
-\subexercise
+\item
+A solenoid of radius $R$ with $n$ turns per unit length, carries a stationary current, $I$. Two hollow cylinders of length $l$ are fixed coaxially and freely rotation. One cylinder of radius, $a$, is insider the coil ($a<R$) and carries the uniformly distributed charge, $Q$. The other cylinder of radius, $b$ ($b>R$) carries the charge, $-Q$. If the current is switched off the cylinders start to rotate. What is the value of the angular momentum? Where does the angular momentum come from?
 
-A solenoid of radius $R$ with $n$ turns per unit length, carries a stationary current, $I$. Two
-hollow cylinders of length $l$ are fixed coaxially and freely rotation. One cylinder of radius, $a$,
-is insider the coil ($a<R$) and carries the uniformly distributed charge, $Q$. The other cylinder of
-radius, $b$ ($b>R$) carries the carge, $-Q$. If the current is switched off the cylinders start to
-rotate. What is the value of the angular momentum? Where does the angular momentum come from?
+Clarification: the charge is only located on the curved surfaces of the cylinders.
+
+\end{enumerate}
+
+\end{enumerate}
+
+
 \end{document}
-
